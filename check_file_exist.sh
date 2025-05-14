@@ -3,7 +3,7 @@
 filename=$(echo "Entrez le nom du fichier : " ) 
 
 # Vérifier l'existence du fichier avec test -f
-if [[ -f "$filename" ]]; then
+if [ -f "$filename" ]; then
     echo "Le fichier '$filename' existe."
 else
     echo "Le fichier '$filename' n'existe pas."
