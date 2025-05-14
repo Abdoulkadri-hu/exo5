@@ -3,7 +3,7 @@
 echo "Entrez le nom du fichier : "
 
 if [ -f filename.txt ]; then
-    echo "Le fichier filenametxt existe."
+    echo "Le fichier filename.txt existe."
 else
-    echo "Le fichier filenametxt n'existe pas."
+    echo "Le fichier filename.txt n'existe pas."
 fi
