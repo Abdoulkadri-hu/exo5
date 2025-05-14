@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# Ce script vérifie si un fichier donné par l'utilisateur existe ou non
-# Objectif : utiliser la condition [ -f filename ]
+# Demande à l'utilisateur le nom du fichier
+read -P "Entrez le nom du fichier : " filename
 
-# Demande à l'utilisateur d'entrer le nom du fichier
-read -p "Entrez le nom du fichier : " filename
-
-# Vérifie si le fichier existe et est un fichier régulier
+# Vérifie si le fichier existe
 if [ -f "$filename" ]; then
     echo "Le fichier '$filename' existe."
 else
