@@ -1,25 +1,15 @@
 #!/bin/bash
 
-# check_file_exist.sh - Vérifie l'existence d'un fichier avec différentes extensions
+# Script: check_file_exist.sh
+# Objectif: Vérifier si un fichier existe
+# Usage: ./check_file_exist.sh
 
-# Demande le nom de base du fichier (sans extension)
-read -p "Entrez le nom du fichier (sans extension) : " filename
+# Demander le nom du fichier
+read -p "Entrez le nom du fichier : " filename
 
-# Définit les extensions à vérifier
-extensions=(".txt" ".sh" ".pdf")
-
-found=false
-
-# Vérifie chaque extension
-for ext in "${extensions[@]}"; do
-    full_filename="${filename}${ext}"
-    if [ -f "$full_filename" ]; then
-        echo "Le fichier '$full_filename' existe."
-        found=true
-    fi
-done
-
-# Si aucun fichier n'a été trouvé
-if [ "$found" = false ]; then
-    echo "Aucun fichier '${filename}' avec les extensions .txt, .sh ou .pdf n'a été trouvé."
+# Vérifier l'existence du fichier avec test -f
+if [ -f "$filename" ]; then
+    echo "Le fichier <<$filename>> existe."
+else
+    echo "Le fichier <<$filename>> n'existe pas."
 fi
