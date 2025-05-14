@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# Demander à l'utilisateur d'entrer le nom du fichier
-echo -n "Entrez le nom du fichier : "
-read filename
+# Méthode alternative pour vérifier l'existence d'un fichier
 
-# Vérifier si le fichier existe
-if [ -f '$filename' ]; then
-    echo "Le fichier "$filename" existe."
+# Demander le nom du fichier (version plus robuste)
+read -p "Entrez le nom du fichier : " filename
+
+# Vérification avec test -f (alternative à [ -f ])
+if test -f "$filename"; then
+    echo "Le fichier '$filename' existe."
 else
-    echo "Le fichier" $filename "n'existe pas."
+    echo "Le fichier '$filename' n'existe pas."
 fi
