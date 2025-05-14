@@ -1,6 +1,6 @@
 #!/bin/bash
 # Demander le nom du fichier
-read echo -n "Entrez le nom du fichier : "  filename
+read echo -p "Entrez le nom du fichier : "  filename
 
 # Vérifier l'existence du fichier avec test -f
 if [ -f "$filename" ]; then
